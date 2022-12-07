@@ -30,8 +30,7 @@ The data reception code is mainly in receive.c and peer.c. Workqueue is used to 
 
 
 #### Data Transmission
-TBD
-
+The data transmission code is mainly in send.c. Similar to data reception, workqueue is used to encrypt packets in an asynchronous way. Since WireGuard device driver has flags indicating to the kernel that it supports generic segmentation offload (GSO), scatter gather I/O, and hardware checksum offloading, the kernel will hand packets that are over the MTU size to WireGuard. We will see how skb segmentations are implemented in kernel module code.
 
 
 #### References
